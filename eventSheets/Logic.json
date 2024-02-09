@@ -2,105 +2,14 @@
 	"name": "Logic",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 302673189609251
-				},
-				{
-					"id": "repeat",
-					"objectClass": "System",
-					"sid": 734174119193932,
-					"parameters": {
-						"count": "256"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 361871372503522,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "x",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 183795884461474
-				},
-				{
-					"eventType": "variable",
-					"name": "y",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 160707231830709
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 939682631608689,
-							"parameters": {
-								"variable": "x",
-								"value": "random(LayoutWidth)"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 977535018784489,
-							"parameters": {
-								"variable": "y",
-								"value": "random(LayoutHeight)"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 823400530739939,
-							"parameters": {
-								"object-to-create": "TreeTrunk",
-								"layer": "0",
-								"x": "x",
-								"y": "y",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 746919852117422,
-							"parameters": {
-								"object-to-create": "TreeLeaves",
-								"layer": "1",
-								"x": "x",
-								"y": "y",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "rotate-clockwise",
-							"objectClass": "TreeLeaves",
-							"sid": 150942552526579,
-							"parameters": {
-								"degrees": "random(360)"
-							}
-						}
-					],
-					"sid": 348185389022637
-				}
-			]
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 475456548945993
 		},
 		{
 			"eventType": "block",
@@ -228,6 +137,107 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 654348655971067
+				},
+				{
+					"id": "repeat",
+					"objectClass": "System",
+					"sid": 327441110122250,
+					"parameters": {
+						"count": "256"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 573818992691731,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 365157789827496
+				},
+				{
+					"eventType": "variable",
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 583886974701948
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 714809201813719,
+							"parameters": {
+								"variable": "x",
+								"value": "random(LayoutWidth)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 716584025620497,
+							"parameters": {
+								"variable": "y",
+								"value": "random(LayoutHeight)"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 908362772911629,
+							"parameters": {
+								"object-to-create": "TreeTrunk",
+								"layer": "0",
+								"x": "x",
+								"y": "y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 944694625390967,
+							"parameters": {
+								"object-to-create": "TreeLeaves",
+								"layer": "1",
+								"x": "x",
+								"y": "y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "TreeLeaves",
+							"sid": 658158948660722,
+							"parameters": {
+								"degrees": "random(360)"
+							}
+						}
+					],
+					"sid": 783949138982827
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-click",
 					"objectClass": "Mouse",
 					"sid": 317095565032460,
@@ -251,6 +261,29 @@
 				}
 			],
 			"sid": 376284647563796
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-distance-travelled",
+					"objectClass": "Bullet",
+					"sid": 302589463489994,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"comparison": 4,
+						"distance": "256"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 257445880283472
+				}
+			],
+			"sid": 212132815905096
 		},
 		{
 			"eventType": "block",
@@ -299,6 +332,87 @@
 			"conditions": [
 				{
 					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 285675143750793,
+					"parameters": {
+						"object": "Zombie"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 809006887791027
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 455329034434785
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 515225464010839,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Zombie",
+					"sid": 579716580381415
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 173833832318255,
+					"parameters": {
+						"object-to-create": "Player",
+						"layer": "0",
+						"x": "random(LayoutWidth)",
+						"y": "random(LayoutHeight)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 589259265315577
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 765802128435983,
+					"parameters": {
+						"interval-seconds": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 892260355614731,
+					"parameters": {
+						"object-to-create": "Zombie",
+						"layer": "0",
+						"x": "random(LayoutWidth)",
+						"y": "random(LayoutHeight)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 958523077911860
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
 					"objectClass": "Zombie",
 					"sid": 968296837678212,
 					"parameters": {
@@ -316,38 +430,22 @@
 					"id": "destroy",
 					"objectClass": "Bullet",
 					"sid": 978478983303058
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 528134334834595,
+					"parameters": {
+						"variable": "score",
+						"value": "10"
+					}
+				},
+				{
+					"callFunction": "UpdateScore",
+					"sid": 605847436738012
 				}
 			],
 			"sid": 150525902542829
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 465920314747942,
-					"parameters": {
-						"interval-seconds": "5.0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 397176298096781,
-					"parameters": {
-						"object-to-create": "Zombie",
-						"layer": "0",
-						"x": "random(LayoutWidth)",
-						"y": "random(LayoutHeight)",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				}
-			],
-			"sid": 521050168042251
 		},
 		{
 			"eventType": "block",
@@ -392,51 +490,34 @@
 			"sid": 364193035000414
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Player",
-					"sid": 319079662558556,
-					"parameters": {
-						"object": "Zombie"
-					}
-				}
-			],
+			"functionName": "UpdateScore",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
 			"actions": [
 				{
-					"id": "destroy",
-					"objectClass": "Player",
-					"sid": 115400676390645
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 942167580347036,
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 224917800304132,
 					"parameters": {
-						"seconds": "5"
+						"text": "\"Score: \""
 					}
 				},
 				{
-					"id": "destroy",
-					"objectClass": "Zombie",
-					"sid": 721603024403235
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 503636777284334,
+					"id": "append-text",
+					"objectClass": "Score",
+					"sid": 349086041382229,
 					"parameters": {
-						"object-to-create": "Player",
-						"layer": "0",
-						"x": "random(LayoutWidth)",
-						"y": "random(LayoutHeight)",
-						"create-hierarchy": false,
-						"template-name": "\"\""
+						"text": "score"
 					}
 				}
 			],
-			"sid": 267164987189777
+			"sid": 326667491945335
 		}
 	],
 	"sid": 209206374752873

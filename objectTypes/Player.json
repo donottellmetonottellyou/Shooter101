@@ -32,20 +32,32 @@
 			{
 				"frames": [
 					{
-						"width": 32,
+						"width": 23,
 						"height": 32,
-						"originX": 0.5,
+						"originX": 0.30434782608695654,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7201098,
+						"imageSpriteId": 6624325,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.03125,
+								1,
+								0.03125,
+								1,
+								1,
+								0,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "Bullet",
-								"x": 1.1875,
-								"y": 0.46875
+								"x": 1.5217391304347827,
+								"y": 0.5
 							}
 						],
 						"duration": 1,

@@ -1,0 +1,20 @@
+{
+	"name": "Score",
+	"plugin-id": "Text",
+	"sid": 481696983769970,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 215771063890465
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "setcolor",
+			"name": "SetColor"
+		}
+	]
+}

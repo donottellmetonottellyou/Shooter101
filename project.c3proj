@@ -29,8 +29,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -92,6 +106,13 @@
 		},
 		{
 			"type": "effect",
+			"id": "setcolor",
+			"name": "Set color",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "warpobject",
 			"name": "Warp object",
 			"author": "Scirra",
@@ -108,7 +129,8 @@
 			"Keyboard",
 			"Mouse",
 			"Bullet",
-			"Zombie"
+			"Zombie",
+			"Score"
 		],
 		"subfolders": []
 	},
@@ -238,8 +260,8 @@
 		"pixelRounding": true,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
+		"useLoaderLayout": true,
+		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [
